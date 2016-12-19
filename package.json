@@ -1,0 +1,33 @@
+{
+  "name": "multi-tinypng",
+  "version": "0.0.1",
+  "description": "Use command line to compress png/jpg files via tinypng api. Support multi api keys.",
+  "main": "tinypng.js",
+  "bin": {
+    "tinypng": "tinypng.js"
+  },
+  "dependencies": {
+    "colors": "^1.1.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/excaliburhan/multi-tinypng.git"
+  },
+  "keywords": [
+    "png",
+    "compress",
+    "image",
+    "tinypng",
+    "node"
+  ],
+  "author": "xiaoping",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/excaliburhan/node-tinypng/issues"
+  },
+  "homepage": "https://github.com/excaliburhan/node-tinypng#readme"
+}
