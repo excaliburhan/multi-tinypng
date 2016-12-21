@@ -13,18 +13,9 @@ var options, options_path = __dirname + '/settings.json', files, files_io = [], 
  * @returns {*}
  */
 var getOptions = function() {
-  var isExist = fs.existsSync(options_path);
-  if (isExist) {
-    var buffer = fs.readFileSync(options_path);
-    options = JSON.parse(buffer.toString());
-    return options;
-  } else {
-    var default_path = __dirname + '/settings_default.json';
-    var buffer = fs.readFileSync(default_path);
-    options = JSON.parse(buffer.toString());
-    fs.writeFileSync(options_path, buffer);
-    return options;
-  }
+  var buffer = fs.readFileSync(options_path);
+  options = JSON.parse(buffer.toString());
+  return options;
 };
 
 /**

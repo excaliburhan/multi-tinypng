@@ -1,6 +1,6 @@
 {
   "name": "multi-tinypng",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Use command line to compress png/jpg files via tinypng api. Support multi api keys.",
   "main": "tinypng.js",
   "bin": {
