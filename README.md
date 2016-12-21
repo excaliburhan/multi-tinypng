@@ -5,6 +5,7 @@
 Thanks to `lagden` and `ozio`
 
 Compress PNG/JPG with TinyPNG API in terminal.
+
 Support multi API keys, if one reaches the limit, automaticly switch to another!
 
 ## Installation

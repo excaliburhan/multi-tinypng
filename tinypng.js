@@ -281,15 +281,22 @@ var makeTiny = function() {
   var request = https.request(req_options, function(res) {
 
     res.on('data', function(d) {
-      d = JSON.parse(d);
-
-      if(d.error) {
+      try {
+        d = JSON.parse(d);
+        if(d.error) {
+          process.stdout.write("error".red + "\n");
+          logError(d.error + ": " + d.message);
+          if (d.error === 'TooManyRequests') { // switch key when reach the limit
+            switchKeys();
+          }
+          exit(1);
+        } else {
+          process.stdout.write("-" + ((1 - d.output.ratio) * 100).toFixed(1) + "%" + " → ".grey);
+        }
+      } catch (error) {
         process.stdout.write("error".red + "\n");
-        logError(d.error + ": " + d.message);
-        switchKeys();
+        logError("tinypng api service is crashed!");
         exit(1);
-      } else {
-        process.stdout.write("-" + ((1 - d.output.ratio) * 100).toFixed(1) + "%" + " → ".grey);
       }
     });
 
