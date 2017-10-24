@@ -149,10 +149,12 @@ var parseArgvs = function() {
  * @returns {object}
  */
 var filterFiles = function() {
+  var allowedExts = ['png', 'jpg', 'jpeg' ];
   for(var i = 0, l = files.length; i < l; i++) {
     var file = files[i];
     if(fs.existsSync(file) && fs.statSync(file).isFile()) {
-      if ((!options.allow_nonpng && file.slice(-4) === '.png' ) || options.allow_nonpng) {
+      var fileExt = file.split('.').pop();
+      if ((!options.allow_nonpng && allowedExts.indexOf(fileExt) > -1 ) || options.allow_nonpng) {
         var pair = [ file, file ];
 
         if(!options.allow_rewrite) {
